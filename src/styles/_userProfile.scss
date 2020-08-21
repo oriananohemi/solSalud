@@ -1,6 +1,6 @@
-.doctor-container{
+.user-container{
     @extend .centerColumn;
-    height: 50vh;
+    height: 80vh;
     img{
         border-radius: 100%;
         width: 158px;
@@ -17,8 +17,7 @@
         margin-bottom: 21px;
         color: $grayletters_color;
     }
-    button{
-        @extend .button;
-        margin-bottom: 21px;
+    select{
+        @extend .input;
     }
 }
