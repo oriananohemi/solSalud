@@ -6,3 +6,49 @@ $grayplaceholderletters_color: #BDBDBD;
 $whiteletters_color: #ffffff;
 
 $font_family: 'Inter', sans-serif;
+
+.horizontalCentering {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: #7A8DFF;
+  border: none;
+  border-radius: 100px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 16px 32px;
+  max-width: 345px;
+  width: 100%;
+}
+
+.input {
+  background-color: #f6f6f6;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 16px 32px;
+  max-width: 345px;
+  width: 100%;
+}
+
+.profile {
+  display: block;
+  text-align: center;
+}
+
+.profile__img {
+  border-radius: 50%;
+}
+
+.medicalAppointment {
+  background-color: #f6f6f6;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 8px 18px;
+  max-width: 345px;
+  width: 100%;
+}
