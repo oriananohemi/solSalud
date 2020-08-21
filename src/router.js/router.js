@@ -1,6 +1,7 @@
 import home from '../pages/home';
 import hola from '../pages/hola';
 import login from '../pages/login';
+import singUpPatient from '../pages/signUpPatient';
 
 const router = (route) => {
   switch (route) {
@@ -10,6 +11,8 @@ const router = (route) => {
       return hola();
     case '#/login':
       return login();
+    case '#/registro-paciente':
+      return singUpPatient();
     default:
       return error404();
   }
