@@ -1,0 +1,23 @@
+{
+  "name": "amigas-del-codigo",
+  "version": "1.0.0",
+  "description": "proyecto para la hackaton laboratoria 2020",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oriananohemi/amigas-del-codigo.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oriananohemi/amigas-del-codigo/issues"
+  },
+  "homepage": "https://github.com/oriananohemi/amigas-del-codigo#readme",
+  "dependencies": {
+    "sass": "^1.26.10",
+    "sweetalert": "^2.1.2"
+  }
+}
