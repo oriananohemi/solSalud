@@ -15,7 +15,7 @@ $font_family: 'Inter', sans-serif;
 }
 
 .button {
-  background-color: #7A8DFF;
+  background-color: $highlight_color;
   border: none;
   border-radius: 100px;
   color: white;
@@ -27,8 +27,8 @@ $font_family: 'Inter', sans-serif;
 }
 
 .input {
-  background-color: #f6f6f6;
-  border: 1px solid #e8e8e8;
+  background-color: $grayinput_color;
+  border: 1px solid $grayborderinput_color;
   border-radius: 8px;
   font-size: 16px;
   padding: 16px 32px;
@@ -46,8 +46,8 @@ $font_family: 'Inter', sans-serif;
 }
 
 .medicalAppointment {
-  background-color: #f6f6f6;
-  border: 1px solid #e8e8e8;
+  background-color: $grayinput_color;
+  border: 1px solid $grayborderinput_color;
   border-radius: 8px;
   padding: 8px 18px;
   max-width: 345px;
