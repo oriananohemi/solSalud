@@ -9,3 +9,15 @@
     width: 15%;
   }
 }
+
+@media (min-width: $media-notebook) {
+  .border__section {
+    text-align: center;
+    border: 1px solid $highlight_color;
+    border-radius: 20px;
+    box-shadow: 6px 11px 44px -9px rgba(0,0,0,0.75);
+    padding: 20px;
+    margin: 30px auto;
+    width: 60%;
+  }
+}

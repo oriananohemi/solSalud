@@ -15,7 +15,7 @@ const singUpDoctor = () => {
   <a class="link" href="">Cancelar</a>
   `;
   const container = document.createElement('section');
-  container.setAttribute('class', 'centerColumn');
+  container.setAttribute('class', 'border__section');
   container.innerHTML = view;
   return container
 }
