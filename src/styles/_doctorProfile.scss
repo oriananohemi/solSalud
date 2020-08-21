@@ -42,8 +42,11 @@
     }
     p{
         margin: 2px 0;
+        font-size: 16px;
+        color: $grayletters_color;
     }
-    .icon::before{
-        font-size: 20px;
+    .icon{
+        font-size: 2em;
+        color: $highlight_color;
     }
 }
