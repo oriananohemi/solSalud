@@ -1,9 +1,9 @@
 const login = () => {
     const view = `
-        <div>
+        <div class='login-container'>
             <h1>Inicia sesión</h1>
             <img src="../assets/humaaans (1).png" alt="main image">
-            <form action="submit">
+            <form class='form-login' action="submit">
                 <input type="mail">
                 <input type="password">
                 <button type="submit">Ingresar</button>

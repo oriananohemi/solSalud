@@ -1,0 +1,6 @@
+.login-container{
+    @extend .centerColumn;
+    .form-login{
+        @extend .centerColumn;
+    }
+}

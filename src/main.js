@@ -1,3 +1,4 @@
+import './styles/styles.scss';
 import router from './router.js/router';
 
 const root = document.getElementById('root');
