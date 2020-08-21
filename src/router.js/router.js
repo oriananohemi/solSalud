@@ -16,6 +16,8 @@ const router = (route) => {
       return singUpPatient();
     case '#/registro-doctor':
       return singUpDoctor();
+    case '#/doctor-perfil':
+      return doctorProfile();
     default:
       return error404();
   }
