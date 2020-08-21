@@ -4,7 +4,8 @@
   "description": "proyecto para la hackaton laboratoria 2020",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d src"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,8 @@
   "homepage": "https://github.com/oriananohemi/amigas-del-codigo#readme",
   "dependencies": {
     "sass": "^1.26.10",
-    "sweetalert": "^2.1.2"
+    "sweetalert": "^2.1.2",
+    "firebase": "^7.17.1",
+    "gh-pages": "^2.1.1"
   }
 }
