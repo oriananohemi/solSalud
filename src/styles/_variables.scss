@@ -14,6 +14,13 @@ $font_family: 'Inter', sans-serif;
   justify-content: space-between;
 }
 
+.centerColumn {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+}
+
 .button {
   background-color: $highlight_color;
   border: none;
