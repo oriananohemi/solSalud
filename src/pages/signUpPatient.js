@@ -10,7 +10,7 @@ const singUpPatient = () => {
     <input class="input" placeholder="Contraseña" required/>
     <button class="button">Registrar</button>
   </form>
-  <a class="link" href="">Ya tienes cuenta? Inicia Sesion</a>
+  <a class="link" href="">¿Ya tienes cuenta? Inicia Sesion</a>
   <a class="link" href="">Cancelar</a>
   `;
   const container = document.createElement('section');
