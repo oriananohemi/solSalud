@@ -2,6 +2,7 @@ import './styles/styles.scss';
 import router from './router.js/router';
 import footer from './template/footer';
 import header from './template/header';
+import './firebase/init';
 
 const root = document.getElementById('root');
 
