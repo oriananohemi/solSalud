@@ -1,7 +1,40 @@
 @import './_variables.scss';
 @import './_login.scss';
+// @import './_register.scss';
 
-body{
-    margin: 0 16px;
-    font-family: $font_family;
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: $font_family;
+  margin: 0 16px;
+}
+
+@media (min-width: $media-tablet) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: $media-notebook) {
+  body {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: $media-desktop) {
+  body {
+    font-size: 20px;
+  }
 }
