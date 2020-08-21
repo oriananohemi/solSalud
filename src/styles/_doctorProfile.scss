@@ -1,0 +1,24 @@
+.doctor-container{
+    @extend .centerColumn;
+    height: 80vh;
+    img{
+        border-radius: 100%;
+        width: 158px;
+        margin-bottom: 21px;
+    }
+    h1{
+        @extend .title;
+        margin: 0;
+        margin-bottom: 21px;
+        color: $grayletters_color;
+    }
+    h3{
+        margin: 0;
+        margin-bottom: 21px;
+        color: $grayletters_color;
+    }
+    button{
+        @extend .button;
+        margin-bottom: 21px;
+    }
+}

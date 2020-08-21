@@ -1,6 +1,31 @@
 .login-container{
     @extend .centerColumn;
+    height: 100vh;
+    h1{
+        @extend .title;
+        margin: 0;
+        margin-bottom: 21px;
+        color: $grayletters_color;
+    }
+    img{
+        @extend .image__responsive;
+        margin-bottom: 21px;
+    }
     .form-login{
         @extend .centerColumn;
+        width: 100%;
+    }
+    .form-login_input{
+        @extend .input;
+        margin: 0;
+        margin-bottom: 21px;
+    }
+    .form-login_button{
+        @extend .button;
+        margin-bottom: 21px;
+    }
+    a{
+        color: $highlight_color;
+        margin-bottom: 21px;
     }
 }
