@@ -1,2 +1,7 @@
 @import './_variables.scss';
 @import './_login.scss';
+
+body{
+    margin: 0 16px;
+    font-family: $font_family;
+}

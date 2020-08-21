@@ -1,5 +1,8 @@
 .login-container{
     @extend .centerColumn;
+    img{
+        width: 100%;
+    }
     .form-login{
         @extend .centerColumn;
     }
