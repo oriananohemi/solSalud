@@ -1,0 +1,49 @@
+.doctor-container{
+    @extend .centerColumn;
+    height: 80vh;
+    img{
+        border-radius: 100%;
+        width: 158px;
+        margin-bottom: 21px;
+    }
+    h1{
+        @extend .title;
+        margin: 0;
+        margin-bottom: 21px;
+        color: $grayletters_color;
+    }
+    h3{
+        margin: 0;
+        margin-bottom: 21px;
+        color: $grayletters_color;
+    }
+    button{
+        @extend .button;
+        margin-bottom: 21px;
+    }
+}
+
+.doctor-appointment_container{
+    @extend .input;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    .doctor-appointment_info{
+        width: 50%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .doctor-appointment_status{
+        width: 50%;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+    }
+    p{
+        margin: 2px 0;
+    }
+    .icon::before{
+        font-size: 20px;
+    }
+}
