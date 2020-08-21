@@ -86,6 +86,17 @@ $media-desktop: 1600px;
   text-align: center;
 }
 
+.message {
+  color: $highlight_color;
+  font-size: 35px;
+  margin: 10px 0;
+}
+
+.subtitle {
+  font-weight: normal;
+  margin: 20px 0;
+}
+
 @media (min-width: $media-tablet) {
   .button,
   .input {

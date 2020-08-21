@@ -3,6 +3,9 @@ import hola from '../pages/hola';
 import login from '../pages/login';
 import singUpPatient from '../pages/signUpPatient';
 import singUpDoctor from '../pages/signUpDoctor';
+import createSpace from '../pages/createSpace';
+import schedule from '../pages/schedule';
+import scheduledAppointment from '../pages/scheduledAppointment';
 
 const router = (route) => {
   switch (route) {
@@ -16,6 +19,12 @@ const router = (route) => {
       return singUpPatient();
     case '#/registro-doctor':
       return singUpDoctor();
+    case '#/crear-consulta':
+      return createSpace();
+    case '#/confirmar-consulta':
+      return schedule();
+    case '#/consulta-confirmada':
+      return scheduledAppointment();
     default:
       return error404();
   }

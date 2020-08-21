@@ -17,6 +17,12 @@ window.addEventListener('load', () => {
   })
 
 window.addEventListener('hashchange', () => {
+  if(window.location.hash !== '#/' && window.location.hash !== '#/registro-paciente' && window.location.hash !== '#/registro-doctor' && window.location.hash !== '#/login' ) {
+    root.insertAdjacentElement('beforeend', header())
+  }
   root.innerHTML = '';
     root.insertAdjacentElement('beforeend', router(window.location.hash))
+  if(window.location.hash !== '#/registro-paciente' && window.location.hash !== '#/registro-doctor' && window.location.hash !== '#/login' ) {
+    root.insertAdjacentElement('beforeend', footer())
+  }
 })
