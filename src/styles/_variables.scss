@@ -13,12 +13,6 @@ $media-tablet: 768px;
 $media-notebook: 1024px;
 $media-desktop: 1600px;
 
-.form {
-  display: block;
-  margin:  0 auto;
-  text-align: center;
-}
-
 .horizontalCentering {
   align-items: center;
   display: flex;
@@ -39,6 +33,7 @@ $media-desktop: 1600px;
   color: white;
   font-weight: bold;
   padding: 16px 32px;
+  margin:  10px 0;
   max-width: 345px;
   width: 100%;
 }
@@ -80,10 +75,26 @@ $media-desktop: 1600px;
   border: none;
   color: $highlight_color;
   display: block;
-  margin: 20px 0;
+  margin: 10px 0;
   text-align: center;
 }
 
 .title {
+  color: $grayletters_color;
   font-size: 30px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+@media (min-width: $media-tablet) {
+  .button,
+  .input {
+    width: 400px;
+  }
+}
+
+@media (min-width: $media-notebook) {
+  .title {
+    font-size: 40px;
+  }
 }
