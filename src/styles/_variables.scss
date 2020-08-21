@@ -8,6 +8,17 @@ $grayinput_color: #f6f6f6;
 
 $font_family: 'Inter', sans-serif;
 
+$media-mobile: 320px;
+$media-tablet: 768px;
+$media-notebook: 1024px;
+$media-desktop: 1600px;
+
+.form {
+  display: block;
+  margin:  0 auto;
+  text-align: center;
+}
+
 .horizontalCentering {
   align-items: center;
   display: flex;
@@ -27,9 +38,19 @@ $font_family: 'Inter', sans-serif;
   border-radius: 100px;
   color: white;
   font-weight: bold;
-  font-size: 16px;
   padding: 16px 32px;
   max-width: 345px;
+  width: 100%;
+}
+
+.buttonHome {
+  background-color: $highlight_color;
+  border: none;
+  border-radius: 100px;
+  color: white;
+  font-weight: bold;
+  padding: 16px 32px;
+  max-width: 201px;
   width: 100%;
 }
 
@@ -37,9 +58,9 @@ $font_family: 'Inter', sans-serif;
   background-color: $grayinput_color;
   border: 1px solid $grayborderinput_color;
   border-radius: 8px;
-  font-size: 16px;
   padding: 16px 32px;
   max-width: 345px;
+  margin:  10px 0;
   width: 100%;
 }
 
@@ -59,4 +80,21 @@ $font_family: 'Inter', sans-serif;
   padding: 8px 18px;
   max-width: 345px;
   width: 100%;
+}
+
+.image__responsive {
+  max-width: 100%
+}
+
+.link {
+  background: transparent;
+  border: none;
+  color: $highlight_color;
+  display: block;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
 }

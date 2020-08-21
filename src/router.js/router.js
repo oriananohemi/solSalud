@@ -1,6 +1,7 @@
 import home from '../pages/home';
 import hola from '../pages/hola';
 import login from '../pages/login';
+// import singUpPatient from '../pages/signUpPatient';
 
 const router = (route) => {
   switch (route) {
