@@ -4,7 +4,7 @@ const schedule = () => {
   const view = `
   <div class="centerColumn">
     <button class="button">Tomar Cita</button>
-    <a class="link" href="">Cancelar</a>
+    <a class="link" href="#/perfil-paciente">Cancelar</a>
   </div>
     `;
   const container = document.createElement('section');

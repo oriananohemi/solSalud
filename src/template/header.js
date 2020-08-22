@@ -3,9 +3,12 @@ import { logout } from '../firebase/auth';
 const header = () => {
   const view = `
   <div class="header__image">
-  <img class="image__responsive" src="../assets/SolSaludPng.png">
+  <a href="#/"><img class="image__responsive" src="../assets/SolSaludPng.png"></a>
   </div>
-  <h4 class="header__link hide" id="exit">Cerrar Sesion</h4>
+  <div id="profile" class="hide">
+  <a class="header__link" href="#/perfil">Perfil</a>
+  <h4 class="header__link" id="exit">Cerrar Sesion</h4>
+  </div>
   <a class="header__link hide" id="login" href="#/login">Iniciar Sesion</a>
   `;
   const container = document.createElement('header');
@@ -13,14 +16,15 @@ const header = () => {
   container.innerHTML = view;
   const session = () => {
     const exit = container.querySelector('#exit');
+    const profile = container.querySelector('#profile');
     const login = container.querySelector('#login');
     const session = localStorage.getItem('session');
-    container.querySelector('#exit').addEventListener('click', logout);
+    exit.addEventListener('click', logout);
     if(session) {
-      exit.classList.remove('hide')
+      profile.classList.remove('hide')
       login.classList.add('hide')
     } else {
-      exit.classList.add('hide')
+      profile.classList.add('hide')
       login.classList.remove('hide')
     }
   }

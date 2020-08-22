@@ -1,10 +1,16 @@
 .header__image {
-  padding: 20px;
+  padding: 40px 10px;
   width: 200px;
 }
 
 .header__link {
   color: $highlight_color;
   text-align: center;
-  margin: 10px 0
+  margin: 25px 0
+}
+
+@media (min-width: $media-tablet) {
+  .header__image {
+    width: 300px;
+  }
 }

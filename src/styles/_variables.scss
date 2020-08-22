@@ -13,6 +13,15 @@ $media-tablet: 768px;
 $media-notebook: 1024px;
 $media-desktop: 1600px;
 
+.swal-button {
+  padding: 7px 19px;
+  border-radius: 18px;
+  background-color: $highlight_color;
+  font-size: 12px;
+  border: 1px solid $highlight_color;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
+
 .horizontalCentering {
   align-items: center;
   display: flex;
@@ -119,12 +128,7 @@ $media-desktop: 1600px;
   display: none;
 }
 
-@media (min-width: $media-tablet) {
-  .button,
-  .input {
-    width: 400px;
-  }
-}
+
 
 @media (min-width: $media-notebook) {
   .title {

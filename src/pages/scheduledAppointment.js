@@ -5,7 +5,7 @@ const scheduledAppointment = () => {
   <div class="centerColumn">
     <h2 class="message">Has tomado esta cita</h2>
     <h3 class="subtitle">A tu correo llegara la informacion</h3>
-    <a class="link" href="">Volver</a>
+    <a class="link" href="#/perfil-paciente">Volver</a>
   </div>
     `;
   const container = document.createElement('section');
