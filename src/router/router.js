@@ -11,6 +11,7 @@ import patientProfile from '../pages/profileUser';
 const router = async (route) => {
   switch (route) {
     case '#/':
+    case '':
       return home();
     case '#/login':
       return login();

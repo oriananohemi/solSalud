@@ -6,7 +6,6 @@ home {
   @extend .centerColumn;
   img {
   @extend .image__responsive;  
-  max-width: 450px;
   }
   &__text {
     margin-bottom: 20px;
