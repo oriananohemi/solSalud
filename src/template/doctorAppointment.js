@@ -17,13 +17,9 @@ const timelineDoctor = (date) => {
         <div class="doctor-appointment_status">
             <p>Cita:</p>
             <p>Disponible</p>
-            <div>
-                <li class="delete">
-                    <span class="flaticon-delete icon"></span>
-                </li>
-                <li class="edit">
-                <span class="flaticon-edit icon"></span>
-                </li>
+            <div>                
+                <span class="flaticon-delete icon delete"></span>                
+                <span class="flaticon-edit icon edit"></span>              
             </div>
         </div>
     </div>
@@ -72,12 +68,14 @@ const timelineDoctor = (date) => {
 
 const doctorAppointment = async () => {
     const container = document.createElement('section');
-    const exportData = async () => {
-        const querySnapshot = await getEvents();
+    const user = JSON.parse(localStorage.getItem('session')).user.uid;
+    const exportData = async () => {        
+        const querySnapshot = await getEvents(user);
         querySnapshot.forEach((doc) => {
-            console.log(doc.data());        
-            container.insertAdjacentElement('beforeend', timelineDoctor({ ...doc.data(), eventId: doc.id }));        
-        });
+            if (user === doc.id) {
+                container.insertAdjacentElement('beforeend', timelineDoctor({ ...doc.data(), eventId: doc.id })); 
+            };           
+        });             
     };
 
     await exportData(); 

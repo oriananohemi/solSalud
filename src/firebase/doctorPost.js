@@ -11,7 +11,7 @@ export const doctorPost = (info) => {
 
 export const getEvent = id => database.collection('citasDoctor').doc(id).get();
 
-export const getEvents = () => database.collection('citasDoctor').orderBy('fechaConsulta', 'desc').get();
+export const getEvents = id => database.collection('citasDoctor').orderBy('fechaConsulta', 'desc').doc(id).get();
 
 export const deleteSpace = id => database.collection('citasDoctor').doc(id).delete();
 
