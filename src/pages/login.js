@@ -22,7 +22,8 @@ const login = () => {
         </div>
     `;    
 
-    const container = document.createElement('section');      
+    const container = document.createElement('section');
+    container.setAttribute('class', 'border__section');
     container.innerHTML = view;
     const buttonLogin = container.querySelector('#loginForm');    
 

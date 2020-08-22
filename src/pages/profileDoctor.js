@@ -1,11 +1,12 @@
 import doctorProfile from '../template/doctorProfile';
 import doctorAppointment from '../template/doctorAppointment';
+console.log(doctorAppointment());
 
 const profileDoctor = () => {
   const container = document.createElement('section');
   container.setAttribute('class', 'border__section');
-  container.insertAdjacentElement('beforeend', doctorProfile())
-  container.insertAdjacentElement('beforeend', doctorAppointment())
+  container.insertAdjacentElement('beforeend', doctorProfile());
+  container.insertAdjacentElement('beforeend', doctorAppointment());
   return container
 }
 

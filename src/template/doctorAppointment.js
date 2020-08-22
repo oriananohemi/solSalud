@@ -1,10 +1,16 @@
-const doctorAppointment = () => {
+import { getEvents } from '../firebase/doctorPost';
+
+const timelineDoctor = (date) => {
+    const user = JSON.parse(localStorage.getItem('session')).user.uid;
+    const eventContainer = document.createElement('article');
+    // eventContainer.setAttribute('class', 'eventTimeline');
+
     const view = `
     <div class="doctor-appointment_container">
         <div class="doctor-appointment_info">
-            <p>Fecha: 20/09/2020</p>
-            <p>Hora: 15:00:00</p>
-            <p>Direccion: ZOOM</p>
+            <p>Fecha: ${date.fechaConsulta}</p>
+            <p>Hora: ${date.hora}</p>
+            <p>Direccion: ${date.lugar}</p>
         </div>
         <div class="doctor-appointment_status">
             <p>Cita:</p>
@@ -12,10 +18,23 @@ const doctorAppointment = () => {
             <div><span class="flaticon-delete icon"></span><span class="flaticon-edit icon"></span></div>
         </div>
     </div>
-    `
+    `;
+    
+    eventContainer.innerHTML = view;    
+    return eventContainer;
+};
 
+const doctorAppointment = async () => {
     const container = document.createElement('section');
-    container.innerHTML = view;
+    const exportData = async () => {
+        const querySnapshot = await getEvents();
+        querySnapshot.forEach((doc) => {
+        console.log(doc.data());        
+        container.insertAdjacentElement('beforeend', timelineDoctor({ ...doc.data(), eventId: doc.id }));        
+    });
+};
+
+    exportData(); 
     return container;
 }
 
