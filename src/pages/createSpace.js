@@ -6,7 +6,7 @@ const createSpace = () => {
   const view = `
   <form id="event_form" class="centerColumn">
     <input id="date" type="date" class="input" placeholder="Fecha" required/>
-    <input id="time" type="text" class="input" placeholder="Hora" required/>
+    <input id="time" type="time" class="input" placeholder="Hora" required/>
     <input id="place" type="text" class="input" placeholder="Direccion" required/>
     <input id="note" type="text" class="input" placeholder="Nota" required/>
     <button class="button">Crear</button>

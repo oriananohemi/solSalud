@@ -13,3 +13,4 @@ export const getUserProfile = async () => {
 };
 
 export const userUpdate = async user => database.collection('pacientes').doc(user.id).update(user);
+

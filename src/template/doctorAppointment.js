@@ -1,7 +1,9 @@
+import swal from 'sweetalert';
 import { getEvents } from '../firebase/doctorPost';
+import { deleteSpace } from '../firebase/doctorPost';
 
 const timelineDoctor = (date) => {
-    // const user = JSON.parse(localStorage.getItem('session')).user.uid;
+    const user = JSON.parse(localStorage.getItem('session')).user.uid;
     const eventContainer = document.createElement('article');
     // eventContainer.setAttribute('class', 'eventTimeline');
 
@@ -16,13 +18,43 @@ const timelineDoctor = (date) => {
         <div class="doctor-appointment_status">
             <p>Cita:</p>
             <p>Disponible</p>
-            <div><span class="flaticon-delete icon"></span><span class="flaticon-edit icon"></span></div>
+            <div>
+                <li class="delete">
+                    <span class="flaticon-delete icon"></span>
+                </li>
+                <span class="flaticon-edit icon"></span>
+            </div>
         </div>
     </div>
     `;
     
     eventContainer.innerHTML = view; 
-    console.log(eventContainer);     
+    console.log(eventContainer);
+    
+    eventContainer
+    .querySelector('.delete')
+    .addEventListener('click', async () => {       
+    if (user === date.id) {
+    swal({
+        title: '¿Estas seguro?',
+        text: 'Una vez eliminado, no podras recuperar este Evento',
+        icon: 'warning',
+        buttons: true,
+        dangerMode: true,
+    }).then((willDelete) => {
+        if (willDelete) {
+        deleteSpace(date.eventId);
+        swal('Tu Evento ha sido eliminado', {
+            icon: 'success',
+        });
+        eventContainer.innerHTML = '';
+        }
+    });
+    } else {
+    swal('No puedes eliminar este evento');
+    }
+    });
+
     return eventContainer;
 };
 
@@ -32,7 +64,7 @@ const doctorAppointment = async () => {
         const querySnapshot = await getEvents();
         querySnapshot.forEach((doc) => {
             console.log(doc.data());        
-            container.insertAdjacentElement('beforeend', timelineDoctor({ ...doc.data() }));        
+            container.insertAdjacentElement('beforeend', timelineDoctor({ ...doc.data(), eventId: doc.id }));        
         });
     };
 
