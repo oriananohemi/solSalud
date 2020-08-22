@@ -4,12 +4,12 @@ const login = () => {
             <h1>Inicia sesión</h1>
             <img src="../assets/humaaans (1).png" alt="main image">
             <form class='form-login' action="submit">
-                <input type="mail">
-                <input type="password">
-                <button type="submit">Ingresar</button>
+                <input class="form-login_input" type="mail" placeholder="Correo">
+                <input class="form-login_input" type="password" placeholder="Contraseña">
+                <button class='form-login_button' type="submit">Ingresar</button>
             </form>
-            <h3>¿Olvidaste tu contraseña?</h3>
-            <h3>Cancelar</h3>
+            <a>¿Olvidaste tu contraseña?</a>
+            <a>Cancelar</a>
         </div>
     `
 
