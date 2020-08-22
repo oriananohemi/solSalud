@@ -1,4 +1,4 @@
-import doctorProfile from '../template/doctorProfile';
+import docProfile from '../template/docProfile';
 
 const scheduledAppointment = () => {
   const view = `
@@ -11,7 +11,7 @@ const scheduledAppointment = () => {
   const container = document.createElement('section');
   container.setAttribute('class', 'border__section');
   container.innerHTML = view;
-  container.insertAdjacentElement('afterbegin', doctorProfile())
+  container.insertAdjacentElement('afterbegin', docProfile())
   return container
 }
 

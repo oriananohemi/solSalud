@@ -86,8 +86,8 @@ export const loginUser = async (email, password) => auth
   .signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
     if (userCredential.user.emailVerified) {
-      localStorage.setItem('session', JSON.stringify(userCredential));
       let user;
+      localStorage.setItem('session', JSON.stringify(userCredential));
       getUserProfile().then((snapshot) => {
         if (snapshot.empty) {
           return;
@@ -99,6 +99,7 @@ export const loginUser = async (email, password) => auth
           } else {
             window.location.href = '#/perfil-doctor'
           }
+          localStorage.setItem('profile', JSON.stringify(user.perfil));
         }).catch((error) => {
           swal({ text: errorMessageHandler(error.code), icon: 'error', button: "Cerrar"})
         });

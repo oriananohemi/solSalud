@@ -1,6 +1,6 @@
 import doctorProfile from '../template/doctorProfile';
 import doctorAppointment from '../template/doctorAppointment';
-// console.log(doctorAppointment());
+console.log(doctorAppointment());
 
 const profileDoctor = async () => {
   const container = document.createElement('section');
