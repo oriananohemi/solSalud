@@ -1,8 +1,14 @@
+const getNameUser = () => {
+    const session = JSON.parse(localStorage.getItem('session'));
+    const sessionName = session.user.displayName;
+    return sessionName;
+};
+
 const docProfile = () => {
     const view = `
     <div class="doctor-container">
         <img src="../assets/perfil.jpeg" alt="medical photo">
-        <h1>Dr. Nancy Bustamante</h1>
+        <h1>${getNameUser()}</h1>
         <h3>#123456789</h3>
     </div>
         `

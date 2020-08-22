@@ -22,9 +22,9 @@ export const createUserByEmailAndPassPatient = (email, password, username) => {
   auth
     .createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      // userCredential.user.updateProfile({
-      //   displayName: username,
-      // });
+        userCredential.user.updateProfile({
+        displayName: username,
+      });
       userCredential.user.sendEmailVerification(config)
         .then(() => {
           const user = {
