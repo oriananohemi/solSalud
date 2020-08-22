@@ -4,7 +4,7 @@ console.log(doctorAppointment());
 
 const profileDoctor = async () => {
   const container = document.createElement('section');
-  container.setAttribute('class', 'border__section');
+  container.setAttribute('class', 'border__sectionn');
   container.insertAdjacentElement('beforeend', doctorProfile());
   container.insertAdjacentElement('beforeend', await doctorAppointment());
   return container
