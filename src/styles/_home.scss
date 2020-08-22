@@ -1,10 +1,12 @@
-.home {
+home {
   color: $grayletters_color;
 }
 
 .homePurpose {
+  @extend .centerColumn;
   img {
-  width: 343px;  
+  @extend .image__responsive;  
+  max-width: 450px;
   }
   &__text {
     margin-bottom: 20px;
@@ -24,6 +26,7 @@
   }
   &__text {
     margin-left: 20px;
+    text-align: center;
   }  
 }
 
@@ -90,11 +93,10 @@
     border-radius: 10px;
     border: 1px solid $highlight_color;
     box-shadow: 0px 4px 10px $grayletters_color;
-    padding: 3% 5%;
+    padding:  10px;
   }
 
   .homeDonate {
-    display: flex;
     max-width: 600px;
     margin: 0 auto;    
   }  
@@ -125,7 +127,7 @@
   }
 
   .homeWoman {
-    padding: 2.2% 5%;
+    padding: 1% 5%;
     height: 322px;
     img {
       margin-top: 55px;
@@ -150,7 +152,6 @@
   }
 
   .homeDonate {
-    display: flex;
     max-width: 768px;
     margin: 0 auto; 
     &__text {
@@ -204,6 +205,3 @@
     font-size: 24px;
   }
 }
-
-
-
