@@ -5,7 +5,7 @@ export const doctorPost = (info) => {
     .add(info)
     .then((res) => {
       console.log(res);
-      window.location.href = '#/timeline';
+      window.location.href = '#/perfil-doctor';
     });
 };
 

@@ -6,7 +6,7 @@ const doctorProfile = () => {
         <img src="../assets/perfil.jpeg" alt="medical photo">
         <h1>Dr. Nancy Bustamante</h1>
         <h3>#123456789</h3>
-        <button type="button">Crear nuevo espacio</button>
+        <a href="#/crear-consulta" class="button" type="button">Crear nuevo espacio</a>
     </div>
         `
 

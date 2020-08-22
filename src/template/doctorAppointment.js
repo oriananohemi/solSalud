@@ -11,6 +11,7 @@ const timelineDoctor = (date) => {
             <p>Fecha: ${date.fechaConsulta}</p>
             <p>Hora: ${date.hora}</p>
             <p>Direccion: ${date.lugar}</p>
+            <p>Nota: ${date.nota}</p>
         </div>
         <div class="doctor-appointment_status">
             <p>Cita:</p>
