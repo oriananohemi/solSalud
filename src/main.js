@@ -2,8 +2,6 @@ import './styles/styles.scss';
 import router from './router/router';
 import footer from './template/footer';
 import header from './template/header';
-import feedback from './template/feedback';
-import { setFeedbackHidingHandler } from './utils/feedback-handler';
 import { validateSession } from './firebase/auth';
 import './firebase/init';
 
@@ -32,6 +30,3 @@ window.addEventListener('hashchange', async () => {
   }
   validateSession();
 })
-
-feedback();
-setFeedbackHidingHandler();

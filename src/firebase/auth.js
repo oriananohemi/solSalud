@@ -2,9 +2,7 @@ import swal from 'sweetalert';
 import { auth } from './init';
 import { saveUser } from './database';
 import { getUserProfile } from '../firebase/database';
-import { showErrorMessage } from '../utils/error-message-handler';
-import { showSuccessMessage } from '../utils/success-message-handler';
-
+import { errorMessageHandler, successMessageHandler  } from '../utils/messageUser';
 // valida si hay una sesion
 export const validateSession = () => {
   if (['#/', '#/login', '#/registro-paciente', '#/registro-doctor'].includes(window.location.hash)) {
@@ -27,7 +25,6 @@ export const createUserByEmailAndPassPatient = (email, password, username) => {
       // userCredential.user.updateProfile({
       //   displayName: username,
       // });
-      console.log(userCredential)
       userCredential.user.sendEmailVerification(config)
         .then(() => {
           const user = {
@@ -37,14 +34,15 @@ export const createUserByEmailAndPassPatient = (email, password, username) => {
             perfil: 'paciente',
           };
           saveUser(user);
+          swal(successMessageHandler('auth/user-registered'))
         })
         .catch((error) => {
-          showErrorMessage(error.code);
+          swal(errorMessageHandler(error.code))
           throw error;
         });
     })
     .catch((error) => {
-      showErrorMessage(error.code);
+      swal(errorMessageHandler(error.code))
       throw error;
     });
 };
@@ -69,15 +67,15 @@ export const createUserByEmailAndPassDoctor = (email, password, username, profes
             perfil: 'doctor',
           };
           saveUser(user);
-          showSuccessMessage('auth/user-registered');
+          swal(successMessageHandler('auth/user-registered'))
         })
         .catch((error) => {
-          showErrorMessage(error.code);
+          swal(errorMessageHandler(error.code))
           throw error;
         });
     })
     .catch((error) => {
-      showErrorMessage(error.code);
+      swal(errorMessageHandler(error.code))
       throw error;
     });
 };
@@ -100,12 +98,13 @@ export const loginUser = async (email, password) => auth
           } else {
             window.location.href = '#/perfil-doctor'
           }
-        }).catch((err) => {
-          console.log('Error getting documents', err);
+        }).catch((error) => {
+          swal(errorMessageHandler(error.code))
+
         });
       })
     } else {  
-      swal("Upss", "Correo no verificado", "error");      
+      swal(errorMessageHandler(error.code))
     }
   })
   .catch((error) => {
