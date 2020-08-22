@@ -35,6 +35,7 @@ const createSpace = () => {
       fechaConsulta: date,      
       lugar: place,
       nota: note,
+      reservada: ''
     };
 
     doctorPost(spaceToCreate);

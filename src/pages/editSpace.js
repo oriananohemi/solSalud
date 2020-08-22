@@ -13,7 +13,7 @@ const editSpaceTemplate = async (spaceId) => {
     <input id="note" type="text" class="input" placeholder="Nota" value="${space.nota}" required/>
     <button type="submit" id="actualizar" class="button">Actualizar</button>
   </form>
-  <a class="link" href="">Cancelar</a>
+  <a class="link" href="#/perfil-doctor">Cancelar</a>
   `;
 
   container.innerHTML = view;

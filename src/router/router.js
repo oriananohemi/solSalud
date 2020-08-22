@@ -11,8 +11,8 @@ import editSpaceTemplate from '../pages/editSpace';
 
 const router = async (route) => {
   let spaceId = '';
-  if (route.includes('#/editSpace?spaceId=', 0)) {
-    spaceId = route.substr(20);
+  if (route.includes('spaceId=')) {
+    spaceId = route.split('spaceId=')[1];
   }
   switch (route) {
     case '#/':
@@ -32,8 +32,8 @@ const router = async (route) => {
       return createSpace();
     case `#/editSpace?spaceId=${spaceId}`:
       return editSpaceTemplate(spaceId);
-    case '#/confirmar-consulta':
-      return schedule();
+    case `#/confirmar-consulta?spaceId=${spaceId}`:
+      return schedule(spaceId);
     case '#/consulta-confirmada':
       return scheduledAppointment();
     default:

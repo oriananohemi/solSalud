@@ -1,7 +1,7 @@
 import docProfile from '../template/docProfile';
 import { editSpace } from '../firebase/doctorPost';
 
-const schedule = () => {
+const schedule = (id) => {
   const view = `
   <div class="centerColumn">
     <button id="take" class="button">Tomar Cita</button>
@@ -16,8 +16,13 @@ const schedule = () => {
   let takeDate = container.querySelector('#take');
   takeDate.addEventListener('click', () => {
     const user = JSON.parse(localStorage.getItem('session')).user.uid;
-    
-    // window.location.hash = '#/consulta-confirmada';
+    const name = JSON.parse(localStorage.getItem('session')).user.displayName;
+    const reservada = {
+      pacienteId: user,
+      nombreId: name
+    }
+    editSpace(id, reservada)
+    window.location.hash = '#/consulta-confirmada';
   })
 
   return container
