@@ -1,6 +1,6 @@
 <p align="center">
   <a href="">
-    <img width=100% src="./src/assets/SolSaludPng.png">
+    <img width=70% src="./src/assets/SolSaludPng.png">
   </a>
 </p>
 
