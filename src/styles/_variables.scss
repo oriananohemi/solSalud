@@ -128,7 +128,12 @@ $media-desktop: 1600px;
   display: none;
 }
 
-
+@media (min-width: $media-tablet) {
+  .button,
+  .input {
+    width: 400px;
+  }
+}
 
 @media (min-width: $media-notebook) {
   .title {
