@@ -1,4 +1,4 @@
-import { auth, provider, database } from './init';
+/* import { auth, provider, database } from './init';
 import { saveUser } from './database';
 import { showErrorMessage } from '../utils/error-message-handler';
 import { showSuccessMessage } from '../utils/success-message-handler';
@@ -101,4 +101,4 @@ export const logout = () => {
     localStorage.clear();
     window.location.href = '#/login';
   });
-};
+}; */
