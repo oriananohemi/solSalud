@@ -11,7 +11,7 @@ const createSpace = () => {
     <input id="note" type="text" class="input" placeholder="Nota" required/>
     <button class="button">Crear</button>
   </form>
-  <a class="link" href="">Cancelar</a>
+  <a class="link" href="#/perfil-doctor">Cancelar</a>
   `;
   const container = document.createElement('section');
   container.setAttribute('class', 'border__section');
