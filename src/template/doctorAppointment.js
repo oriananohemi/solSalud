@@ -30,8 +30,7 @@ const timelineDoctor = (date) => {
     </div>
     `;
     
-    eventContainer.innerHTML = view; 
-    console.log(eventContainer);
+    eventContainer.innerHTML = view;    
     
     eventContainer
     .querySelector('.delete')

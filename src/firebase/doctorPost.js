@@ -16,3 +16,5 @@ export const getEvents = () => database.collection('citasDoctor').orderBy('fecha
 export const deleteSpace = id => database.collection('citasDoctor').doc(id).delete();
 
 export const editSpace = async (id, data) => database.collection('citasDoctor').doc(id).update(data);
+
+export const getEventById = id => database.collection('users').doc(id).get();
