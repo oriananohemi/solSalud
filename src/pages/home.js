@@ -1,3 +1,5 @@
+import header from '../template/header';
+
 const home = () => {
   const view = `
   <div class="home">
@@ -40,6 +42,7 @@ const home = () => {
 
   const container = document.createElement('section');
   container.innerHTML = view;
+  container.insertAdjacentElement('beforeend', header())
   return container
 }
 
