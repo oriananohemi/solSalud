@@ -6,7 +6,7 @@ const singUpDoctor = () => {
     const email = document.getElementById('email').value;
     const profesional = document.getElementById('profesionalCard').value;
     const pass = document.getElementById('pass').value;
-    createUserByEmailAndPassDoctor(email, pass, username);
+    createUserByEmailAndPassDoctor(email, pass, username, profesional);
   };
   const view = `
   <h1 class="title">Registrate</h1>

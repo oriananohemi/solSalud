@@ -1,6 +1,7 @@
 import swal from 'sweetalert';
 import { auth } from './init';
 import { saveUser } from './database';
+import { getUserProfile } from '../firebase/database';
 import { showErrorMessage } from '../utils/error-message-handler';
 import { showSuccessMessage } from '../utils/success-message-handler';
 
@@ -48,7 +49,7 @@ export const createUserByEmailAndPassPatient = (email, password, username) => {
     });
 };
 
-export const createUserByEmailAndPassDoctor = (email, password, username) => {
+export const createUserByEmailAndPassDoctor = (email, password, username, profesional ) => {
   const config = {
     url: 'http://localhost:8080/#/login',
   };
@@ -64,6 +65,7 @@ export const createUserByEmailAndPassDoctor = (email, password, username) => {
             id: userCredential.user.uid,
             usuario: username,
             correo: userCredential.user.email,
+            tarjetProfesional: profesionl,
             perfil: 'doctor',
           };
           saveUser(user);
@@ -81,16 +83,27 @@ export const createUserByEmailAndPassDoctor = (email, password, username) => {
 };
 
 // Inicio de sesion Doctor
-export const loginUser = (email, password) => auth
+export const loginUser = async (email, password) => auth
   .signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
     if (userCredential.user.emailVerified) {
       localStorage.setItem('session', JSON.stringify(userCredential));
-      if(userCredential.user.perfil === 'doctor') {
-        window.location.href = '#/perfil-doctor';
-      } else {
-        window.location.href = '#/perfil-paciente';
-      }
+      let user;
+      getUserProfile().then((snapshot) => {
+        if (snapshot.empty) {
+          return;
+        }
+        snapshot.forEach((element) => {
+          user = element.data();
+          if(user.perfil === 'paciente') {
+            window.location.href = '#/perfil-paciente'
+          } else {
+            window.location.href = '#/perfil-doctor'
+          }
+        }).catch((err) => {
+          console.log('Error getting documents', err);
+        });
+      })
     } else {  
       swal("Upss", "Correo no verificado", "error");      
     }
