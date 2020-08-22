@@ -43,5 +43,7 @@ body {
 @media (min-width: $media-desktop) {
   body {
     font-size: 20px;
+    width: 80%;
+    margin: 0 auto;
   }
 }
