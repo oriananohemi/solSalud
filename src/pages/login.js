@@ -4,8 +4,6 @@ const login = () => {
     const loginUsers = () => {
         const email = document.getElementById('email').value;
         const pass = document.getElementById('password').value;
-        console.log(email)
-        console.log(pass)
         loginUser(email, pass);
     };
     const view = `
@@ -18,7 +16,7 @@ const login = () => {
                 <button id="buttonForm" class='form-login_button' type="submit">Ingresar</button>
             </form>
             <a>¿Olvidaste tu contraseña?</a>
-            <a>Cancelar</a>
+            <a href="#/">Cancelar</a>
         </div>
     `;    
 

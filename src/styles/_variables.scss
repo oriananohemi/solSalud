@@ -48,15 +48,22 @@ $media-desktop: 1600px;
   max-width: 201px;
   width: 100%;
 }
-
+.form__group,
 .input {
   background-color: $grayinput_color;
   border: 1px solid $grayborderinput_color;
   border-radius: 8px;
   padding: 16px 32px;
+  outline: none;
   max-width: 345px;
   margin:  10px 0;
   width: 100%;
+}
+
+.input__pass {
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
 .profile {
@@ -106,6 +113,10 @@ $media-desktop: 1600px;
 .subtitle {
   font-weight: normal;
   margin: 20px 0;
+}
+
+.hide {
+  display: none;
 }
 
 @media (min-width: $media-tablet) {
