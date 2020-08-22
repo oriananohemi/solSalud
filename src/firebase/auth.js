@@ -1,8 +1,8 @@
 import swal from 'sweetalert';
 import { auth } from './init';
-/*import { saveUser } from './database';
+import { saveUser } from './database';
 import { showErrorMessage } from '../utils/error-message-handler';
-import { showSuccessMessage } from '../utils/success-message-handler';*/
+import { showSuccessMessage } from '../utils/success-message-handler';
 
 // valida si hay una sesion
 export const validateSession = () => {
@@ -15,13 +15,82 @@ export const validateSession = () => {
   }
 };
 
+// Registro con correo y contraseña
+export const createUserByEmailAndPassPatient = (email, password, username) => {
+  const config = {
+    url: 'http://localhost:8080/#/login',
+  };
+  auth
+    .createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // userCredential.user.updateProfile({
+      //   displayName: username,
+      // });
+      console.log(userCredential)
+      userCredential.user.sendEmailVerification(config)
+        .then(() => {
+          const user = {
+            id: userCredential.user.uid,
+            usuario: username,
+            correo: userCredential.user.email,
+            perfil: 'paciente',
+          };
+          saveUser(user);
+        })
+        .catch((error) => {
+          showErrorMessage(error.code);
+          throw error;
+        });
+    })
+    .catch((error) => {
+      showErrorMessage(error.code);
+      throw error;
+    });
+};
+
+export const createUserByEmailAndPassDoctor = (email, password, username) => {
+  const config = {
+    url: 'http://localhost:8080/#/login',
+  };
+  auth
+    .createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      userCredential.user.updateProfile({
+        displayName: username,
+      });
+      userCredential.user.sendEmailVerification(config)
+        .then(() => {
+          const user = {
+            id: userCredential.user.uid,
+            usuario: username,
+            correo: userCredential.user.email,
+            perfil: 'doctor',
+          };
+          saveUser(user);
+          showSuccessMessage('auth/user-registered');
+        })
+        .catch((error) => {
+          showErrorMessage(error.code);
+          throw error;
+        });
+    })
+    .catch((error) => {
+      showErrorMessage(error.code);
+      throw error;
+    });
+};
+
 // Inicio de sesion Doctor
 export const loginUser = (email, password) => auth
   .signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
     if (userCredential.user.emailVerified) {
       localStorage.setItem('session', JSON.stringify(userCredential));
-      window.location.href = '#/perfil-doctor';
+      if(userCredential.user.perfil === 'doctor') {
+        window.location.href = '#/perfil-doctor';
+      } else {
+        window.location.href = '#/perfil-paciente';
+      }
     } else {  
       swal("Upss", "Correo no verificado", "error");      
     }
