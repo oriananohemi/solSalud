@@ -1,4 +1,5 @@
 import docProfile from '../template/docProfile';
+import { editSpace } from '../firebase/doctorPost';
 
 const schedule = () => {
   const view = `
@@ -14,7 +15,9 @@ const schedule = () => {
 
   let takeDate = container.querySelector('#take');
   takeDate.addEventListener('click', () => {
-    window.location.hash = '#/consulta-confirmada';
+    const user = JSON.parse(localStorage.getItem('session')).user.uid;
+    
+    // window.location.hash = '#/consulta-confirmada';
   })
 
   return container
