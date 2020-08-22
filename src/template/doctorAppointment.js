@@ -22,7 +22,7 @@ const timelineDoctor = (date) => {
     `;
     
     eventContainer.innerHTML = view; 
-    console.log(eventContainer);     
+    // console.log(eventContainer);     
     return eventContainer;
 };
 
@@ -31,7 +31,7 @@ const doctorAppointment = async () => {
     const exportData = async () => {
         const querySnapshot = await getEvents();
         querySnapshot.forEach((doc) => {
-            console.log(doc.data());        
+            // console.log(doc.data());        
             container.insertAdjacentElement('beforeend', timelineDoctor({ ...doc.data() }));        
         });
     };

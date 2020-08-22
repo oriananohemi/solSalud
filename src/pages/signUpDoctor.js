@@ -6,7 +6,8 @@ const singUpDoctor = () => {
     const email = document.getElementById('email').value;
     const profesional = document.getElementById('profesionalCard').value;
     const pass = document.getElementById('pass').value;
-    createUserByEmailAndPassDoctor(email, pass, username, profesional);
+    const specialty = document.getElementById('specialty').value;
+    createUserByEmailAndPassDoctor(email, pass, specialty, username, profesional);
   };
   const view = `
   <h1 class="title">Registrate</h1>
@@ -16,6 +17,11 @@ const singUpDoctor = () => {
   <form class="centerColumn" id="formSignUp">
     <input id="name" class="input" placeholder="Nombre" required/>
     <input id="email" class="input" placeholder="Correo" required/>
+    <select class="input" name="Especialidad" id="specialty">
+      <option value="">Especialidad</option>
+      <option value="Psicología">Psicología</option>
+      <option value="Medicina general">Medicina general</option>
+    </select>
     <input id="profesionalCard" class="input" placeholder="Numero de tarjeta profesional" required/>
     <div class="form__group" >
       <input class="input__pass" type="password" id="pass" placeholder="Contraseña" required/>

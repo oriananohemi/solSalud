@@ -49,7 +49,7 @@ export const createUserByEmailAndPassPatient = (email, password, username) => {
     });
 };
 
-export const createUserByEmailAndPassDoctor = (email, password, username, profesional ) => {
+export const createUserByEmailAndPassDoctor = (email, password, specialty, username, profesional ) => {
   const config = {
     url: 'http://localhost:8080/#/login',
   };
@@ -66,6 +66,7 @@ export const createUserByEmailAndPassDoctor = (email, password, username, profes
             usuario: username,
             correo: userCredential.user.email,
             tarjetProfesional: profesional,
+            especialidad: specialty,
             perfil: 'doctor',
           };
           saveUser(user);

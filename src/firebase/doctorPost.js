@@ -10,3 +10,5 @@ export const doctorPost = (info) => {
 };
 
 export const getEvents = () => database.collection('citasDoctor').orderBy('fechaConsulta', 'desc').get();
+
+export const getEventById = id => database.collection('users').doc(id).get();
