@@ -7,7 +7,7 @@ import './firebase/init';
 
 const root = document.getElementById('root');
 
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
   root.innerHTML = '';
   if(window.location.hash !== '#/registro-paciente' && window.location.hash !== '#/registro-doctor' && window.location.hash !== '#/login' ) {
     root.insertAdjacentElement('beforeend', header())
@@ -19,12 +19,12 @@ window.addEventListener('load', () => {
   validateSession();
   })
 
-window.addEventListener('hashchange', () => {
+window.addEventListener('hashchange', async () => {
   if(window.location.hash !== '#/registro-paciente' && window.location.hash !== '#/registro-doctor' && window.location.hash !== '#/login' ) {
     root.insertAdjacentElement('beforeend', header())
   }
   root.innerHTML = '';
-    root.insertAdjacentElement('beforeend', router(window.location.hash))
+  root.insertAdjacentElement('beforeend', await router(window.location.hash))
   if(window.location.hash !== '#/registro-paciente' && window.location.hash !== '#/registro-doctor' && window.location.hash !== '#/login' ) {
     root.insertAdjacentElement('beforeend', footer())
   }

@@ -7,4 +7,6 @@ export const doctorPost = (info) => {
       console.log(res);
       window.location.href = '#/timeline';
     });
-  };
+};
+
+export const getEvents = () => database.collection('citasDoctor').orderBy('fechaConsulta', 'desc').get();
