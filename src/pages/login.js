@@ -14,6 +14,7 @@ const login = () => {
     `
 
     const container = document.createElement('section');
+    container.setAttribute('class', 'border__section');
     container.innerHTML = view;
     return container;
 }
