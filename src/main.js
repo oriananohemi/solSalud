@@ -2,6 +2,9 @@ import './styles/styles.scss';
 import router from './router.js/router';
 import footer from './template/footer';
 import header from './template/header';
+import feedback from './template/feedback';
+import { validateSession } from './firebase/auth';
+import { setFeedbackHidingHandler } from './utils/feedback-handler';
 import './firebase/init';
 
 const root = document.getElementById('root');
@@ -27,3 +30,6 @@ window.addEventListener('hashchange', () => {
     root.insertAdjacentElement('beforeend', footer())
   }
 })
+
+feedback();
+setFeedbackHidingHandler();
