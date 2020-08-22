@@ -3,7 +3,7 @@ import userAppointment from '../template/userAppointment';
 
 const patientProfile = async () => {
   const container = document.createElement('section');
-  container.setAttribute('class', 'border__section');
+  container.setAttribute('class', 'border__sectionn');
   container.insertAdjacentElement('beforeend', userProfile())
   container.insertAdjacentElement('beforeend', await userAppointment())
   return container

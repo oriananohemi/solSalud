@@ -14,7 +14,6 @@ const createSpace = () => {
   <a class="link" href="#/perfil-doctor">Cancelar</a>
   `;
   const container = document.createElement('section');
-  container.setAttribute('class', 'border__section');
   container.innerHTML = view;
   const eventForm = container.querySelector('#event_form');
   container.insertAdjacentElement('afterbegin', doctorProfile())
@@ -35,6 +34,7 @@ const createSpace = () => {
       fechaConsulta: date,      
       lugar: place,
       nota: note,
+      reservada: ''
     };
 
     doctorPost(spaceToCreate);

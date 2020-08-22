@@ -9,7 +9,7 @@ const scheduledAppointment = () => {
   </div>
     `;
   const container = document.createElement('section');
-  container.setAttribute('class', 'border__section');
+  container.setAttribute('class', 'border__sectionn');
   container.innerHTML = view;
   container.insertAdjacentElement('afterbegin', docProfile())
   return container
