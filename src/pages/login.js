@@ -28,7 +28,7 @@ const login = () => {
     container.innerHTML = view;
     const buttonLogin = container.querySelector('#loginForm');    
 
-    const loginPassword = container.querySelector('#pass');
+    const loginPassword = container.querySelector('#password');
     const showPass = container.querySelector('#showPass');
   
     buttonLogin.addEventListener('submit', (e) => { e.preventDefault(); loginUsers(); });

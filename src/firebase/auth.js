@@ -34,15 +34,15 @@ export const createUserByEmailAndPassPatient = (email, password, username) => {
             perfil: 'paciente',
           };
           saveUser(user);
-          swal(successMessageHandler('auth/user-registered'))
+          swal({ text: successMessageHandler('auth/user-registered'), icon: 'success', button: "Cerrar"})
         })
         .catch((error) => {
-          swal(errorMessageHandler(error.code))
+          swal({ text: errorMessageHandler(error.code), icon: 'error', button: "Cerrar"})
           throw error;
         });
     })
     .catch((error) => {
-      swal(errorMessageHandler(error.code))
+      swal({ text: errorMessageHandler(error.code), icon: 'error', button: "Cerrar"})
       throw error;
     });
 };
@@ -67,15 +67,15 @@ export const createUserByEmailAndPassDoctor = (email, password, username, profes
             perfil: 'doctor',
           };
           saveUser(user);
-          swal(successMessageHandler('auth/user-registered'))
+          swal({ text: successMessageHandler('auth/user-registered'), icon: 'success', button: "Cerrar"})
         })
         .catch((error) => {
-          swal(errorMessageHandler(error.code))
+          swal({ text: errorMessageHandler(error.code), icon: 'error', button: "Cerrar"})
           throw error;
         });
     })
     .catch((error) => {
-      swal(errorMessageHandler(error.code))
+      swal({ text: errorMessageHandler(error.code), icon: 'error', button: "Cerrar"})
       throw error;
     });
 };
@@ -99,16 +99,16 @@ export const loginUser = async (email, password) => auth
             window.location.href = '#/perfil-doctor'
           }
         }).catch((error) => {
-          swal(errorMessageHandler(error.code))
-
+          swal({ text: errorMessageHandler(error.code), icon: 'error', button: "Cerrar"})
         });
       })
     } else {  
-      swal(errorMessageHandler(error.code))
+        swal({ text: errorMessageHandler(error.code), icon: 'error', button: "Cerrar"})
+
     }
   })
   .catch((error) => {
-    console.error(error.code);
+      swal({ text: errorMessageHandler(error.code), icon: 'error', button: "Cerrar"})
     throw error;
   });
 
