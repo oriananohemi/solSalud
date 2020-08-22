@@ -22,7 +22,9 @@ const timelineDoctor = (date) => {
                 <li class="delete">
                     <span class="flaticon-delete icon"></span>
                 </li>
+                <li class="edit">
                 <span class="flaticon-edit icon"></span>
+                </li>
             </div>
         </div>
     </div>
@@ -52,6 +54,14 @@ const timelineDoctor = (date) => {
     });
     } else {
     swal('No puedes eliminar este evento');
+    }
+    });
+
+    eventContainer.querySelector('.edit').addEventListener('click', async () => {
+    if (user === date.id) {
+        window.location.href = `#/editSpace?spaceId=${date.eventId}`;
+    } else {
+        console.log('No puedes editar este evento');
     }
     });
 
