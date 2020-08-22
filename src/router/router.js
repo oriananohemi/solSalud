@@ -7,8 +7,13 @@ import schedule from '../pages/schedule';
 import scheduledAppointment from '../pages/scheduledAppointment';
 import profileDoctor from '../pages/profileDoctor';
 import patientProfile from '../pages/profileUser';
+import editSpaceTemplate from '../pages/editSpace';
 
 const router = async (route) => {
+  let spaceId = '';
+  if (route.includes('#/editSpace?spaceId=', 0)) {
+    spaceId = route.substr(20);
+  }
   switch (route) {
     case '#/':
     case '':
@@ -25,6 +30,8 @@ const router = async (route) => {
       return patientProfile();
     case '#/crear-consulta':
       return createSpace();
+    case `#/editSpace?spaceId=${spaceId}`:
+      return editSpaceTemplate(spaceId);
     case '#/confirmar-consulta':
       return schedule();
     case '#/consulta-confirmada':

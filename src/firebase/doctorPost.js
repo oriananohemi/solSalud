@@ -9,6 +9,12 @@ export const doctorPost = (info) => {
     });
 };
 
+export const getEvent = id => database.collection('citasDoctor').doc(id).get();
+
 export const getEvents = () => database.collection('citasDoctor').orderBy('fechaConsulta', 'desc').get();
 
 export const deleteSpace = id => database.collection('citasDoctor').doc(id).delete();
+
+export const editSpace = async (id, data) => database.collection('citasDoctor').doc(id).update(data);
+
+export const getEventById = id => database.collection('users').doc(id).get();

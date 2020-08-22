@@ -4,7 +4,7 @@ import { deleteSpace } from '../firebase/doctorPost';
 
 const timelineDoctor = (date) => {
     const user = JSON.parse(localStorage.getItem('session')).user.uid;
-    const eventContainer = document.createElement('article');
+    const eventContainer = document.createElement('article');   
 
     const view = `
     <div class="doctor-appointment_container">
@@ -17,18 +17,15 @@ const timelineDoctor = (date) => {
         <div class="doctor-appointment_status">
             <p>Cita:</p>
             <p>Disponible</p>
-            <div>
-                <li class="delete">
-                    <span class="flaticon-delete icon"></span>
-                </li>
-                <span class="flaticon-edit icon"></span>
+            <div>                
+                <span class="flaticon-delete icon delete"></span>                
+                <span class="flaticon-edit icon edit"></span>              
             </div>
         </div>
     </div>
     `;
     
-    eventContainer.innerHTML = view; 
-    console.log(eventContainer);
+    eventContainer.innerHTML = view;    
     
     eventContainer
     .querySelector('.delete')
@@ -58,16 +55,29 @@ const timelineDoctor = (date) => {
     }
     });
 
+    eventContainer.querySelector('.edit').addEventListener('click', async () => {
+    if (user === date.id) {
+        window.location.href = `#/editSpace?spaceId=${date.eventId}`;
+    } else {
+        console.log('No puedes editar este evento');
+    }
+    });
+
     return eventContainer;
 };
 
 const doctorAppointment = async () => {
     const container = document.createElement('section');
     const exportData = async () => {
-        const querySnapshot = await getEvents();
-        querySnapshot.forEach((doc) => {
-            console.log(doc.data());        
-            container.insertAdjacentElement('beforeend', timelineDoctor({ ...doc.data(), eventId: doc.id }));        
+        const user = JSON.parse(localStorage.getItem('session')).user.uid;
+        const querySnapshot = await getEvents();        
+        querySnapshot.forEach((doc) => {  
+            const documento = doc.data(); 
+            const id = documento.id            
+            if (user === id) {
+                container.insertAdjacentElement('beforeend', timelineDoctor({ ...doc.data(), eventId: doc.id }))
+                ; 
+            }                
         });
     };
 
