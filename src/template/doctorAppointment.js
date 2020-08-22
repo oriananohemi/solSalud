@@ -1,7 +1,7 @@
 import { getEvents } from '../firebase/doctorPost';
 
 const timelineDoctor = (date) => {
-    const user = JSON.parse(localStorage.getItem('session')).user.uid;
+    // const user = JSON.parse(localStorage.getItem('session')).user.uid;
     const eventContainer = document.createElement('article');
     // eventContainer.setAttribute('class', 'eventTimeline');
 
@@ -20,7 +20,8 @@ const timelineDoctor = (date) => {
     </div>
     `;
     
-    eventContainer.innerHTML = view;    
+    eventContainer.innerHTML = view; 
+    console.log(eventContainer);     
     return eventContainer;
 };
 
@@ -29,13 +30,13 @@ const doctorAppointment = async () => {
     const exportData = async () => {
         const querySnapshot = await getEvents();
         querySnapshot.forEach((doc) => {
-        console.log(doc.data());        
-        container.insertAdjacentElement('beforeend', timelineDoctor({ ...doc.data(), eventId: doc.id }));        
-    });
-};
+            console.log(doc.data());        
+            container.insertAdjacentElement('beforeend', timelineDoctor({ ...doc.data() }));        
+        });
+    };
 
-    exportData(); 
+    await exportData(); 
     return container;
-}
+};
 
 export default doctorAppointment;

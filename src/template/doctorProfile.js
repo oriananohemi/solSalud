@@ -1,4 +1,4 @@
-import { doctorPost } from '../firebase/doctorPost'
+// import { doctorPost } from '../firebase/doctorPost'
 
 const doctorProfile = () => {
     const view = `

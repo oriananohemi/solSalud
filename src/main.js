@@ -1,5 +1,5 @@
 import './styles/styles.scss';
-import router from './router.js/router';
+import router from './router/router';
 import footer from './template/footer';
 import header from './template/header';
 import { validateSession } from './firebase/auth';
@@ -12,7 +12,7 @@ window.addEventListener('load', async () => {
   if(window.location.hash !== '#/registro-paciente' && window.location.hash !== '#/registro-doctor' && window.location.hash !== '#/login' ) {
     root.insertAdjacentElement('beforeend', header())
   }
-    root.insertAdjacentElement('beforeend', router(window.location.hash))
+    root.insertAdjacentElement('beforeend', await router(window.location.hash))
   if(window.location.hash !== '#/registro-paciente' && window.location.hash !== '#/registro-doctor' && window.location.hash !== '#/login' ) {
     root.insertAdjacentElement('beforeend', footer())
   }

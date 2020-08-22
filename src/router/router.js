@@ -8,7 +8,7 @@ import scheduledAppointment from '../pages/scheduledAppointment';
 import profileDoctor from '../pages/profileDoctor';
 import patientProfile from '../pages/profileUser';
 
-const router = (route) => {
+const router = async (route) => {
   switch (route) {
     case '#/':
       return home();
