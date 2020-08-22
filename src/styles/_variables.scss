@@ -69,6 +69,11 @@ $media-desktop: 1600px;
   width: 100%;
 }
 
+.form__group {
+  @extend .horizontalCentering;
+  padding-right: 16px;
+}
+
 .input__pass {
   background: transparent;
   border: none;
@@ -123,6 +128,8 @@ $media-desktop: 1600px;
   font-weight: normal;
   margin: 20px 0;
 }
+
+
 
 .hide {
   display: none;
