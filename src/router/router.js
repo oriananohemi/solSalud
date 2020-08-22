@@ -8,6 +8,7 @@ import scheduledAppointment from '../pages/scheduledAppointment';
 import profileDoctor from '../pages/profileDoctor';
 import patientProfile from '../pages/profileUser';
 import editSpaceTemplate from '../pages/editSpace';
+import error404 from '../pages/error404';
 
 const router = async (route) => {
   let spaceId = '';

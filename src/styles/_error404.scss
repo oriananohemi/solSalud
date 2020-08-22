@@ -1,0 +1,34 @@
+.error404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 25% 0;
+  img {
+    width: 50%;
+    margin: auto;    
+  } 
+}
+
+.error404-title {
+  @extend .title;  
+}
+
+@media (min-width: $media-tablet) {
+  .error404-title {
+    font-size: 50px;
+  }
+
+  .error404 {
+    margin: 10% 0;
+  }
+}
+
+@media (min-width: $media-notebook) {
+  .error404-title {
+    font-size: 50px;
+  }
+
+  .error404 img {
+    width: 30%;
+  }
+}
