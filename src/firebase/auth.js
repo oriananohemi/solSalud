@@ -17,7 +17,7 @@ export const validateSession = () => {
 // Registro con correo y contraseña
 export const createUserByEmailAndPassPatient = (email, password, username) => {
   const config = {
-    url: 'http://localhost:8080/#/login',
+    url: 'https://oriananohemi.github.io/solSalud/#/login',
   };
   auth
     .createUserWithEmailAndPassword(email, password)
