@@ -8,7 +8,7 @@ const getNameUser = () => {
 const doctorProfile = () => {
     const view = `
     <div class="doctor-container">
-        <img src="../assets/perfil.jpeg" alt="medical photo">
+        <img src="./assets/perfil.jpeg" alt="medical photo">
         <h1>${getNameUser()}</h1>
         <h3>#123456789</h3>
         <a href="#/crear-consulta" class="button" type="button">Crear nuevo espacio</a>

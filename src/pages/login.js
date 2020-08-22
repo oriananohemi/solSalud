@@ -9,7 +9,7 @@ const login = () => {
     const view = `
         <div class='login-container'>
             <h1>Inicia sesión</h1>
-            <img src="../assets/humaaans (1).png" alt="main image">
+            <img src="./assets/humaaans (1).png" alt="main image">
             <form id="loginForm" class='form-login'>
                 <input id="email" class="form-login_input" type="mail" placeholder="Correo">
                 <div class="form__group" >

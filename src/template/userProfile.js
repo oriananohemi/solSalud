@@ -9,7 +9,7 @@ const getNameUser = () => {
 const userProfile = () => {
     const view = `
     <div class="user-container">
-        <img src="../assets/user.jpg" alt="user photo">
+        <img src="./assets/user.jpg" alt="user photo">
         <h1>${getNameUser()}</h1>
         <h3>#123456789</h3>
         <select name="Especialidad" id="specialities">

@@ -3,7 +3,7 @@ import { logout } from '../firebase/auth';
 const header = () => {
   const view = `
   <div class="header__image">
-  <a href="#/"><img class="image__responsive" src="../assets/SolSaludPng.png"></a>
+  <a href="#/"><img class="image__responsive" src="./assets/SolSaludPng.png"></a>
   </div>
   <div id="profile" class="hide">
   <a class="header__link hide" href="#/perfil-doctor" id="doc">Perfil</a>

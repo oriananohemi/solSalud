@@ -2,7 +2,7 @@ const home = () => {
   const view = `
   <div class="home">
     <div class="homePurpose">
-      <img src="../assets/pagInicioPropo.png" alt="Imagen proposito">
+      <img src="./assets/pagInicioPropo.png" alt="Imagen proposito">
       <div class="homePurpose__text">
         <h3>Nuestro Propósito</h3>
         <p>Ser un puente entre médicos y/o psicólogos voluntarios y mujeres que necesiten esta ayuda profesional y no tengan los medios o recursos para tal fin. Creemos que la salud es un derecho que no debería depender de tu economía o país de origen. </p>
@@ -10,7 +10,7 @@ const home = () => {
     </div>
     <div class="homeContainer">
       <div class="homeWoman">
-        <img src="../assets/pagInicioMujer.png" alt="Mujer">
+        <img src="./assets/pagInicioMujer.png" alt="Mujer">
         <div class="homeWoman__text">
           <h3>Para mujeres</h3>
           <p>¿Necesitas una consulta y no puedes acceder a un sistema de salud digno?</p>
@@ -25,7 +25,7 @@ const home = () => {
           <p>Sé voluntario</p>
           <a href="#/registro-doctor"><button class="home_button">Regístrate</button></a>
         </div>
-        <img src="../assets/humaaans.png" alt="Doctor">
+        <img src="./assets/humaaans.png" alt="Doctor">
       </div>
     </div>
     <div class="homeDonate">

@@ -10,7 +10,7 @@ const singUpPatient = () => {
   const view = `
   <h1 class="title">Registrate</h1>
   <div class="signUp__img">
-    <img class="image__responsive" src="../assets/registerMuj.png"/>
+    <img class="image__responsive" src="./assets/registerMuj.png"/>
   </div>
   <form class="centerColumn" id="formSignUp">
     <input id="name" class="input" placeholder="Nombre" required/>
