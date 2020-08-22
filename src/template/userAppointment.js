@@ -1,5 +1,8 @@
 import { getEvents, getEventById } from '../firebase/doctorPost';
 
+let queryArray = []
+let originalQueryArray = []
+
 
 const timelineUser = (data) => {
     const eventContainer = document.createElement('article');
@@ -22,26 +25,46 @@ const timelineUser = (data) => {
     return eventContainer;
 }
 
-const userAppointment = async () => {
-    const container = document.createElement('section');
-    const exportData = async () => {
+const exportData = async (container, filteringSpeciality) => {
+    if (!originalQueryArray.length) {
         const querySnapshot = await getEvents();
-        const queryArray = []
         querySnapshot.forEach(element => {
-            queryArray.push(element.data())
+            originalQueryArray.push(element.data())
         })
-        for(let i = 0; i < queryArray.length; i++){
-            const data = queryArray[i];
+        for(let i = 0; i < originalQueryArray.length; i++){
+            const data = originalQueryArray[i];
             let user = await getEventById(data.id)
             user = user ? user.data() : { especialidad: null }
             let especialidad = user ? user.especialidad : null
             especialidad = especialidad || 'N/A'
-            container.insertAdjacentElement('beforeend', timelineUser({ ...data, especialidad }));        
+            originalQueryArray[i] = { ...data, especialidad }
         }
-    };
+    }
+    
 
-    await exportData(); 
+    if (filteringSpeciality) {
+        queryArray = originalQueryArray.filter(({ especialidad }) => especialidad === filteringSpeciality)
+    } else {
+        queryArray = [...originalQueryArray]
+    }
+
+    queryArray.forEach(element => {
+        container.insertAdjacentElement('beforeend', timelineUser(element));        
+    })
+
+};
+
+const userAppointment = async () => {
+    const container = document.createElement('section');
+    container.setAttribute('id', 'dates')
+    await exportData(container); 
     return container;
 };
+
+export const updateUserApopointments = async (filteringSpeciality) => {
+    const container = document.querySelector('#dates')
+    container.innerHTML = ''
+    await exportData(container, filteringSpeciality)
+}
 
 export default userAppointment;
