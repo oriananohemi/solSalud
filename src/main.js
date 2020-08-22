@@ -2,6 +2,7 @@ import './styles/styles.scss';
 import router from './router.js/router';
 import footer from './template/footer';
 import header from './template/header';
+import { validateSession } from './firebase/auth';
 import './firebase/init';
 
 const root = document.getElementById('root');
@@ -15,6 +16,7 @@ window.addEventListener('load', () => {
   if(window.location.hash !== '#/registro-paciente' && window.location.hash !== '#/registro-doctor' && window.location.hash !== '#/login' ) {
     root.insertAdjacentElement('beforeend', footer())
   }
+  validateSession();
   })
 
 window.addEventListener('hashchange', () => {
@@ -26,4 +28,5 @@ window.addEventListener('hashchange', () => {
   if(window.location.hash !== '#/registro-paciente' && window.location.hash !== '#/registro-doctor' && window.location.hash !== '#/login' ) {
     root.insertAdjacentElement('beforeend', footer())
   }
+  validateSession();
 })
