@@ -2,9 +2,7 @@ import swal from 'sweetalert';
 import { auth } from './init';
 import { saveUser } from './database';
 import { getUserProfile } from '../firebase/database';
-import { showErrorMessage } from '../utils/error-message-handler';
-import { showSuccessMessage } from '../utils/success-message-handler';
-
+import { errorMessageHandler, successMessageHandler  } from '../utils/messageUser';
 // valida si hay una sesion
 export const validateSession = () => {
   if (['#/', '#/login', '#/registro-paciente', '#/registro-doctor'].includes(window.location.hash)) {
@@ -27,7 +25,6 @@ export const createUserByEmailAndPassPatient = (email, password, username) => {
       // userCredential.user.updateProfile({
       //   displayName: username,
       // });
-      console.log(userCredential)
       userCredential.user.sendEmailVerification(config)
         .then(() => {
           const user = {
@@ -37,14 +34,15 @@ export const createUserByEmailAndPassPatient = (email, password, username) => {
             perfil: 'paciente',
           };
           saveUser(user);
+          swal({ text: successMessageHandler('auth/user-registered'), icon: 'success', button: "Cerrar"})
         })
         .catch((error) => {
-          showErrorMessage(error.code);
+          swal({ text: errorMessageHandler(error.code), icon: 'error', button: "Cerrar"})
           throw error;
         });
     })
     .catch((error) => {
-      showErrorMessage(error.code);
+      swal({ text: errorMessageHandler(error.code), icon: 'error', button: "Cerrar"})
       throw error;
     });
 };
@@ -70,15 +68,15 @@ export const createUserByEmailAndPassDoctor = (email, password, specialty, usern
             perfil: 'doctor',
           };
           saveUser(user);
-          showSuccessMessage('auth/user-registered');
+          swal({ text: successMessageHandler('auth/user-registered'), icon: 'success', button: "Cerrar"})
         })
         .catch((error) => {
-          showErrorMessage(error.code);
+          swal({ text: errorMessageHandler(error.code), icon: 'error', button: "Cerrar"})
           throw error;
         });
     })
     .catch((error) => {
-      showErrorMessage(error.code);
+      swal({ text: errorMessageHandler(error.code), icon: 'error', button: "Cerrar"})
       throw error;
     });
 };
@@ -101,16 +99,17 @@ export const loginUser = async (email, password) => auth
           } else {
             window.location.href = '#/perfil-doctor'
           }
-        }).catch((err) => {
-          console.log('Error getting documents', err);
+        }).catch((error) => {
+          swal({ text: errorMessageHandler(error.code), icon: 'error', button: "Cerrar"})
         });
       })
     } else {  
-      swal("Upss", "Correo no verificado", "error");      
+        swal({ text: errorMessageHandler(error.code), icon: 'error', button: "Cerrar"})
+
     }
   })
   .catch((error) => {
-    console.error(error.code);
+      swal({ text: errorMessageHandler(error.code), icon: 'error', button: "Cerrar"})
     throw error;
   });
 

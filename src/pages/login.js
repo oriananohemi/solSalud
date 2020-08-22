@@ -12,7 +12,10 @@ const login = () => {
             <img src="../assets/humaaans (1).png" alt="main image">
             <form id="loginForm" class='form-login'>
                 <input id="email" class="form-login_input" type="mail" placeholder="Correo">
-                <input id="password" class="form-login_input" type="password" placeholder="Contraseña">                
+                <div class="form__group" >
+                <input class="input__pass" type="password" id="password" placeholder="Contraseña" required/>
+                <span class="" id="showPass">Mostrar</span>
+              </div>
                 <button id="buttonForm" class='form-login_button' type="submit">Ingresar</button>
             </form>
             <a>¿Olvidaste tu contraseña?</a>
@@ -25,7 +28,25 @@ const login = () => {
     container.innerHTML = view;
     const buttonLogin = container.querySelector('#loginForm');    
 
+    const loginPassword = container.querySelector('#password');
+    const showPass = container.querySelector('#showPass');
+  
     buttonLogin.addEventListener('submit', (e) => { e.preventDefault(); loginUsers(); });
+
+
+  const showPassword = () => {
+    if (loginPassword.type === 'password') {
+      loginPassword.type = 'text';
+      showPass.innerHTML = '';
+      showPass.innerHTML= 'Ocultar';
+    } else {
+      loginPassword.type = 'password';
+      showPass.innerHTML = '';
+      showPass.innerHTML = 'Mostrar';
+    }
+  };
+
+  showPass.addEventListener('click', showPassword);
 
     return container;
 }

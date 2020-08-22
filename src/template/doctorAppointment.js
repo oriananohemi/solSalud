@@ -5,7 +5,6 @@ import { deleteSpace } from '../firebase/doctorPost';
 const timelineDoctor = (date) => {
     const user = JSON.parse(localStorage.getItem('session')).user.uid;
     const eventContainer = document.createElement('article');
-    // eventContainer.setAttribute('class', 'eventTimeline');
 
     const view = `
     <div class="doctor-appointment_container">
@@ -34,25 +33,29 @@ const timelineDoctor = (date) => {
     
     eventContainer
     .querySelector('.delete')
-    .addEventListener('click', async () => {       
-    if (user === date.id) {
+    .addEventListener('click', async () => {
+        const hour = new Date(date.fechaConsulta);
+        const currentTime = new Date();
+        const subtract = hour.getTime() - currentTime.getTime();
+        const oper = subtract/ (1000*60*60*24);
+    if (user === date.id && oper >= '1') {
     swal({
         title: '¿Estas seguro?',
-        text: 'Una vez eliminado, no podras recuperar este Evento',
+        text: 'Una vez eliminado, no podras recuperar esta consulta',
         icon: 'warning',
         buttons: true,
         dangerMode: true,
     }).then((willDelete) => {
         if (willDelete) {
         deleteSpace(date.eventId);
-        swal('Tu Evento ha sido eliminado', {
+        swal('Tu consulta ha sido eliminada', {
             icon: 'success',
         });
         eventContainer.innerHTML = '';
         }
     });
     } else {
-    swal('No puedes eliminar este evento');
+    swal('No puedes eliminar esta consulta');
     }
     });
 
