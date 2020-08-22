@@ -1,7 +1,6 @@
 import { auth, provider, database } from './init';
 import { saveUser } from './database';
 import { showErrorMessage } from '../utils/error-message-handler';
-// import { showSuccessMessage } from '../utils/success-message-handler';
 
 
 // // valida si hay una sesion
@@ -18,7 +17,7 @@ import { showErrorMessage } from '../utils/error-message-handler';
 // Registro con correo y contraseña
 export const createUserByEmailAndPassPatient = (email, password, username) => {
   const config = {
-    url: '#/login',
+    url: 'http://localhost:8080/#/login',
   };
   auth
     .createUserWithEmailAndPassword(email, password)
@@ -26,8 +25,8 @@ export const createUserByEmailAndPassPatient = (email, password, username) => {
       // userCredential.user.updateProfile({
       //   displayName: username,
       // });
-      userCredential.user.sendEmailVerification(config)
       console.log(userCredential)
+      userCredential.user.sendEmailVerification(config)
         .then(() => {
           const user = {
             id: userCredential.user.uid,
@@ -36,7 +35,6 @@ export const createUserByEmailAndPassPatient = (email, password, username) => {
             perfil: 'paciente',
           };
           saveUser(user);
-          showSuccessMessage('auth/user-registered');
         })
         .catch((error) => {
           showErrorMessage(error.code);
