@@ -15,7 +15,7 @@ const home = () => {
           <h3>Para mujeres</h3>
           <p>¿Necesitas una consulta y no puedes acceder a un sistema de salud digno?</p>
           <p>Es un espacio seguro para ti.</p>
-          <a href="#/registro-paciente" class="home_button">Regístrate</a>
+          <a href="#/registro-paciente"><button class="home_button">Regístrate</button></a>
         </div>
       </div>
       <div class="homeDoctor">      
@@ -23,7 +23,7 @@ const home = () => {
           <h3>¿Eres médico y/o psicólogo?</h3>
           <p>¿Te sientes identificado con nuestro propósito de ayudar?</p>
           <p>Sé voluntario</p>
-          <a href="#/registro-doctor" class="home_button">Regístrate</a>
+          <a href="#/registro-doctor"><button class="home_button">Regístrate</button></a>
         </div>
         <img src="../assets/humaaans.png" alt="Doctor">
       </div>
