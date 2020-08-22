@@ -5,6 +5,7 @@ import header from './template/header';
 import feedback from './template/feedback';
 import { validateSession } from './firebase/auth';
 import { setFeedbackHidingHandler } from './utils/feedback-handler';
+import { validateSession } from './firebase/auth';
 import './firebase/init';
 
 const root = document.getElementById('root');
@@ -18,6 +19,7 @@ window.addEventListener('load', () => {
   if(window.location.hash !== '#/registro-paciente' && window.location.hash !== '#/registro-doctor' && window.location.hash !== '#/login' ) {
     root.insertAdjacentElement('beforeend', footer())
   }
+  validateSession();
   })
 
 window.addEventListener('hashchange', () => {
@@ -33,3 +35,4 @@ window.addEventListener('hashchange', () => {
 
 feedback();
 setFeedbackHidingHandler();
+  validateSession();
