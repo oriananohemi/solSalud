@@ -1,0 +1,209 @@
+.home {
+  color: $grayletters_color;
+}
+
+.homePurpose {
+  img {
+  width: 343px;  
+  }
+  &__text {
+    margin-bottom: 20px;
+  }
+}
+
+.homeWoman {   
+  display: flex;
+  margin-bottom: 40px;
+  h3 {
+    text-align: center;
+  }
+  img {
+    margin-top: 18px;
+    width: 103px; 
+    height: 167px;
+  }
+  &__text {
+    margin-left: 20px;
+  }  
+}
+
+.home_button {
+  @extend .buttonHome;
+}
+
+.homeDoctor {   
+  display: flex;
+  margin-bottom: 40px;
+  img {
+    margin-top: 18px;
+    width: 113px; 
+    height: 165px;
+  }
+  &__text {
+    margin-right: 20px;
+    text-align: center;
+  }
+  h3 {
+    max-width: 126px;
+    text-align: center;
+    margin: auto;
+  }  
+}
+
+.homeDonate {
+  max-width: 227px;
+  text-align: center;
+  margin: auto;
+}
+
+@media (min-width: $media-tablet) {
+
+  .homePurpose { 
+    display: flex;
+    flex-direction: column;   
+    img {
+    text-align: center;
+    margin: auto;
+    width: 450px;  
+    }
+    &__text {
+      margin: 30px;
+    }
+  }
+
+  .homeContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .homeWoman {
+    max-width: 450px;
+    border-radius: 10px;
+    border: 1px solid $highlight_color;
+    box-shadow: 0px 4px 10px $grayletters_color;
+    padding: 3% 5%;
+  }
+
+  .homeDoctor {
+    max-width: 450px;
+    border-radius: 10px;
+    border: 1px solid $highlight_color;
+    box-shadow: 0px 4px 10px $grayletters_color;
+    padding: 3% 5%;
+  }
+
+  .homeDonate {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;    
+  }  
+
+  .home_buttonDonate {
+    @extend .home_button;
+    height: 50px;
+    align-self: center;
+  }
+}
+
+@media (min-width: $media-notebook) {
+  
+  .homePurpose {
+    flex-direction: row;
+    margin-bottom: 40px;
+    img{
+      width: 450px;      
+    }
+    &__text {
+      font-size: 20px;
+    }
+  }
+
+  .homeContainer {  
+    justify-content: space-around;  
+    flex-direction: row;
+  }
+
+  .homeWoman {
+    padding: 2.2% 5%;
+    height: 322px;
+    img {
+      margin-top: 55px;
+    }
+    &__text {
+      text-align: left;
+    }
+  }
+
+  .homeDoctor {
+    padding: 4% 5%;
+    height: 322px;
+    h3 {
+      max-width: 151px;
+    }
+    img {
+      margin-top: 55px;
+    }
+    &__text {
+      text-align: left;
+    }
+  }
+
+  .homeDonate {
+    display: flex;
+    max-width: 768px;
+    margin: 0 auto; 
+    &__text {
+      margin: 0 20px 20px 0;
+    }   
+  }  
+}
+
+@media (min-width: $media-desktop) {
+
+  .home {
+    button {
+      font-size: 21px;
+    }
+  }
+
+  .homePurpose {    
+    margin: 60px;
+    img{
+      width: 700px;      
+    }
+    &__text {
+      font-size: 24px;
+      align-self: center;
+    }
+  }  
+
+  .homeContainer {  
+    justify-content: space-evenly;  
+    flex-direction: row;
+  }
+
+  .homeWoman {
+    font-size: 20px;
+    padding: 1% 5%;
+    max-width: 600px;
+    height: 330px;
+  }
+
+  .homeDoctor {
+    padding: 1.9% 5%;
+    max-width: 600px;
+    height: 330px;
+    h3 {
+      max-width: 168px;
+    }
+  }
+
+  .homeDonate {    
+    max-width: 820px;
+    font-size: 24px;
+  }
+}
+
+
+
