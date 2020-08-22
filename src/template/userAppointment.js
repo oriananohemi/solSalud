@@ -22,6 +22,12 @@ const timelineUser = (data) => {
     `
 
     eventContainer.innerHTML = view;
+
+    let take = eventContainer.querySelector('.user-appointment_container');
+    take.addEventListener('click', () => {
+        window.location.hash = '#/confirmar-consulta'
+    })
+
     return eventContainer;
 }
 
@@ -66,5 +72,6 @@ export const updateUserApopointments = async (filteringSpeciality) => {
     container.innerHTML = ''
     await exportData(container, filteringSpeciality)
 }
+
 
 export default userAppointment;
