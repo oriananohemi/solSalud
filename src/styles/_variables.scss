@@ -115,6 +115,10 @@ $media-desktop: 1600px;
   margin: 20px 0;
 }
 
+.hide {
+  display: none;
+}
+
 @media (min-width: $media-tablet) {
   .button,
   .input {
