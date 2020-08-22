@@ -4,7 +4,7 @@ import { deleteSpace } from '../firebase/doctorPost';
 
 const timelineDoctor = (date) => {
     const user = JSON.parse(localStorage.getItem('session')).user.uid;
-    const eventContainer = document.createElement('article');
+    const eventContainer = document.createElement('article');   
 
     const view = `
     <div class="doctor-appointment_container">
@@ -68,14 +68,17 @@ const timelineDoctor = (date) => {
 
 const doctorAppointment = async () => {
     const container = document.createElement('section');
-    const user = JSON.parse(localStorage.getItem('session')).user.uid;
-    const exportData = async () => {        
-        const querySnapshot = await getEvents(user);
-        querySnapshot.forEach((doc) => {
-            if (user === doc.id) {
-                container.insertAdjacentElement('beforeend', timelineDoctor({ ...doc.data(), eventId: doc.id })); 
-            };           
-        });             
+    const exportData = async () => {
+        const user = JSON.parse(localStorage.getItem('session')).user.uid;
+        const querySnapshot = await getEvents();        
+        querySnapshot.forEach((doc) => {  
+            const documento = doc.data(); 
+            const id = documento.id            
+            if (user === id) {
+                container.insertAdjacentElement('beforeend', timelineDoctor({ ...doc.data(), eventId: doc.id }))
+                ; 
+            }                
+        });
     };
 
     await exportData(); 
