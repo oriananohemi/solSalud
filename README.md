@@ -19,6 +19,10 @@ La migración internacional da lugar a diferencias en los resultados en materia 
 SolSalud nace de la iniciativa de unir a todos aquellos medicos y psicologos que aún creen que la salud es un derecho humano primordial, que saben que las enfermedades no conocen de fronteras ni niveles económicos, y que quieran ser voluntarios para ayudar a aquellas mujeres que mas lo necesitan.
 
 En una primera etapa unimos a especialistas de la salud con las mujeres que necesitan acceder a salud de calidad, en una siguiente iteracion queremos llevarlo mas alla, creando una funcionalidad de gofundme para los tratamientos que nuestras mujeres llegaran a necesitar.
+
+
+
+
 <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.36.32.png"> <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.36.47.png"> <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.36.54.png"> <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.37.00.png"> <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.37.11.png"> <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.37.49.png"> <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.38.19.png"> <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.38.46.png"> <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.39.10.png">
 
 
