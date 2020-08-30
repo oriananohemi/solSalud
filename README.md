@@ -5,8 +5,6 @@
   </a>
 </p>
 
-<a href="https://oriananohemi.github.io/SolSalud/#/">Demo del Proyecto</a>
-
 ## Según la asamblea mundial de la salud:
  
 Las mujeres migrantes y desplazadas pueden tener un acceso limitado a la atención de salud sexual y reproductiva y pueden encontrarse expuestas a amenazas específicas para sus derechos conexos. Muchas mujeres migrantes o refugiadas no reciben atención prenatal o la reciben con retraso a causa de los obstáculos financieros en los hospitales, de la falta de derivación de los casos a ginecólogos, o del miedo, en particular a ser señaladas ante las autoridades y por motivos de vergüenza.
@@ -21,7 +19,7 @@ SolSalud nace de la iniciativa de unir a todos aquellos medicos y psicologos que
 
 En una primera etapa unimos a especialistas de la salud con las mujeres que necesitan acceder a salud de calidad, en una siguiente iteracion queremos llevarlo mas alla, creando una funcionalidad de gofundme para los tratamientos que nuestras mujeres llegaran a necesitar.
 
-
+<a href="https://oriananohemi.github.io/SolSalud/#/">Demo del Proyecto</a>
 
 
 <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.36.32.png"> <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.36.47.png"> <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.36.54.png"> <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.37.00.png"> <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.37.11.png"> <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.37.49.png"> <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.38.19.png"> <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.38.46.png"> <img width=200 src="./src/assets/Screen Shot 2020-08-23 at 12.39.10.png">
