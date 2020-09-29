@@ -1,4 +1,3 @@
-
 <p align="center">
   <a href="https://oriananohemi.github.io/SolSalud/#/">
     <img width=70% src="./src/assets/SolSaludPng.png">
